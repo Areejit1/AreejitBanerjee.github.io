@@ -79,6 +79,22 @@
     }
   </style>
 </head>
+  <script>
+  const button = document.getElementById('download-pdf');
+  button.addEventListener('click', downloadPDF);
+
+    function downloadPDF() {
+  const doc = new jsPDF();
+  const element = document.body; // You can choose specific element(s) to capture
+  doc.html(element, {
+    callback: function (pdf) {
+      pdf.save("Areejit_Banerjee_Resume.pdf"); // Set your desired filename
+    }
+  });
+}
+  }
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <body>
 
 <header>
@@ -88,6 +104,7 @@
 
 <div class="container">
   <img src="a41.jpg" alt="Areejit Banerjee" class="profile-picture">
+  <button id="download-pdf">Download PDF</button>
 
   <section class="section">
     <h2>About Me</h2>
